@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietaAPI", "DietaAPI\DietaAPI.csproj", "{A8109DD9-6C82-4EE9-BB5D-D2653964EBD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8109DD9-6C82-4EE9-BB5D-D2653964EBD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8109DD9-6C82-4EE9-BB5D-D2653964EBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8109DD9-6C82-4EE9-BB5D-D2653964EBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8109DD9-6C82-4EE9-BB5D-D2653964EBD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E80BABC6-DACE-41EC-8904-C0DE167957F7}
+	EndGlobalSection
+EndGlobal
