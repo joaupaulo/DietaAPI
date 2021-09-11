@@ -22,9 +22,9 @@ namespace DietaAPI.Repositorios.Receitas
             return _db.Receita.ToList();
         }
 
-        public Receita BuscarItem(Receita receitasid)
+        public Receita BuscarItem(int id)
         {
-           var itemReceita = _db.Receita.Find(receitasid);
+           var itemReceita = _db.Receita.Find(id);
 
             return itemReceita;
         }
@@ -48,13 +48,14 @@ namespace DietaAPI.Repositorios.Receitas
             return receitas;
         }
 
-        public Receita Delete(Receita receitas)
+        public void Delete(int  id)
         {
-            _db.Receita.Remove(receitas);
+            var delete = _db.Receita.Where(x => x.AlimentoId == id).FirstOrDefault();
+            _db.Receita.Remove(delete);
             _db.SaveChanges();
 
 
-            return receitas;
+            
         }
 
     }

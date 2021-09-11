@@ -17,9 +17,9 @@ namespace DietaAPI.Repositorios
             
         }
 
-        public Alimento BuscarItem(Alimento AlimentoId)
+        public Alimento BuscarItem(int id)
         {
-            var Pessoa = _db.Alimento.Find(AlimentoId);
+            var Pessoa = _db.Alimento.Find(id);
 
             return Pessoa;
            
@@ -41,11 +41,14 @@ namespace DietaAPI.Repositorios
         }
 
 
-        public Alimento Delete(Alimento Alimentos)
+        public void Delete(int Id)
         {
-            _db.Alimento.Remove(Alimentos);
+          var delete = _db.Alimento.Where(x => x.AlimentoId == Id).FirstOrDefault();
+
+
+            _db.Alimento.Remove(delete);
             _db.SaveChanges();
-            return Alimentos;
+            
         }
 
         public List<Alimento> ListarTodos()

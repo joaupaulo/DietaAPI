@@ -1,4 +1,7 @@
 using DietaAPI.Contexto;
+using DietaAPI.Repositorios;
+using DietaAPI.Repositorios.Receitas;
+using DietaAPI.Repositorios.TabelaNutricionais;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +31,9 @@ namespace DietaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<AlimentosInterface, AlimentosRepositorio>();
+            services.AddScoped<ReceitaInterface, ReceitasRepositorio>();
+            services.AddScoped<TabelaInterface, TabelaRepositorio>();
             services.AddDbContext<DietaContexto>(options => options.UseSqlServer(Configuration.GetConnectionString("Padrao")));
             services.AddControllers();
             services.AddSwaggerGen(c =>

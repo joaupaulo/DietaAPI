@@ -8,11 +8,11 @@ namespace DietaAPI.Repositorios.TabelaNutricionais
 {
     interface TabelaInterface
     {
-        List<TabelaNutricional> ListarTodos { get; set; }
-        TabelaNutricional Buscaitem(TabelaNutricional TabelaNutricionais);
+        List<TabelaNutricional> ListarTodos();
+        TabelaNutricional Buscaitem(int id);
         TabelaNutricional Update(TabelaNutricional TabelaNutricionais);
         TabelaNutricional Create(TabelaNutricional TabelaNutricionais);
-        TabelaNutricional Delete(TabelaNutricional TabelaNutricionais);
+        void Delete(int  id);
 
     }
 }

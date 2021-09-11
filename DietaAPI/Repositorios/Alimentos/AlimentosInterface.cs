@@ -9,10 +9,11 @@ namespace DietaAPI.Repositorios
     interface AlimentosInterface
     {
         List<Alimento> ListarTodos();
-        Alimento BuscarItem(Alimento Alimentos);
+        Alimento BuscarItem(int Id);
         Alimento Create(Alimento Alimentos);
         Alimento Update(Alimento Alimentos);
-        Alimento Delete(Alimento Alimentos);
+
+        void Delete(int Id);
 
     }
 }

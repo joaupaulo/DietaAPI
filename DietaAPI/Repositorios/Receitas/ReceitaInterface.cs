@@ -9,10 +9,10 @@ namespace DietaAPI.Repositorios
     interface ReceitaInterface
     {
         List<Receita> ListarTodos();
-        Receita BuscarItem(Receita Receitas);
+        Receita BuscarItem(int id);
         Receita Update(Receita Receitas);
         Receita Create(Receita Receitas);
-        Receita Delete(Receita Receitas);
+        void Delete(int id);
 
     }
 }
