@@ -1,5 +1,6 @@
 ﻿using DietaAPI.Contexto;
 using DietaAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace DietaAPI.Repositorios.TabelaNutricionais
         {
             _db = db;
         }
-
+   
         public List<TabelaNutricional> ListarTodos () {
 
 
@@ -25,7 +26,7 @@ namespace DietaAPI.Repositorios.TabelaNutricionais
             return _db.TabelaNutricional.ToList();
 
         }
-
+      
         public TabelaNutricional Buscaitem(int id)
         {
             var buscaitem = _db.TabelaNutricional.Where(x => x.TabelaNutricionalId == id).FirstOrDefault();
@@ -35,21 +36,24 @@ namespace DietaAPI.Repositorios.TabelaNutricionais
 
         public TabelaNutricional Create(TabelaNutricional TabelaNutricionais)
         {
-            _db.TabelaNutricional.Add(TabelaNutricionais);
+          _db.TabelaNutricional.Add(TabelaNutricionais);
             _db.SaveChanges();
+
+            return TabelaNutricionais;
         }
 
         public void Delete(int id)
         {
             var delete = _db.TabelaNutricional.Where(x => x.TabelaNutricionalId == id).FirstOrDefault();
-            return delete;
-
+             
         }
 
         public TabelaNutricional Update(TabelaNutricional TabelaNutricionais)
         {
             _db.TabelaNutricional.Update(TabelaNutricionais);
             _db.SaveChanges();
+
+            return TabelaNutricionais;
         }
     }
 }
