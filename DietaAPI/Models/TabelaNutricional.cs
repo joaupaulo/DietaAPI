@@ -19,7 +19,6 @@ namespace DietaAPI.Models
         public string Calcio { get; set; }
         public string Ferro { get; set; }
         public string FibraAlimentar { get; set; }
-        public Alimento Alimento { get; set; }
-        public int AlimentoId { get; set; }
+      
     }
 }

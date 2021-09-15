@@ -50,7 +50,7 @@ namespace DietaAPI.Repositorios.Receitas
 
         public void Delete(int  id)
         {
-            var delete = _db.Receita.Where(x => x.AlimentoId == id).FirstOrDefault();
+            var delete = _db.Receita.Where(x => x.ReceitaId == id).FirstOrDefault();
             _db.Receita.Remove(delete);
             _db.SaveChanges();
 

@@ -11,10 +11,11 @@ namespace DietaAPI.Models
         public string Nome { get; set; }
         public string Ingredientes { get; set; }
         public string Preparatorio { get; set; }
-        public Alimento Alimento { get; set; }
-        public int AlimentoId { get; set; }
+      
         public TabelaNutricional TabelaNutricional { get; set; }
-        public int TabelaNutricionalId { get; set; }
+        public int? TabelaNutricionalId { get; set; }
 
     }
 }
+
+
