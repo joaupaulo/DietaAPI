@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DietaAPI.Repositorios.TabelaNutricionais
 {
-    interface TabelaInterface
+    public interface ITabelaInterface
     {
         List<TabelaNutricional> ListarTodos();
         TabelaNutricional Buscaitem(int id);

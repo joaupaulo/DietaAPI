@@ -31,11 +31,12 @@ namespace DietaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<AlimentosInterface, AlimentosRepositorio>();
-            services.AddScoped<ReceitaInterface, ReceitasRepositorio>();
-            services.AddScoped<TabelaInterface, TabelaRepositorio>();
-            services.AddDbContext<DietaContexto>(options => options.UseSqlServer(Configuration.GetConnectionString("Padrao")));
             services.AddControllers();
+            services.AddScoped<IAlimentosInterface, AlimentosRepositorio>();
+            services.AddScoped<IReceitaInterface, ReceitasRepositorio>();
+            services.AddScoped<ITabelaInterface, TabelaRepositorio>();
+            services.AddDbContext<DietaContexto>(options => options.UseSqlServer(Configuration.GetConnectionString("Padrao")));
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DietaAPI", Version = "v1" });

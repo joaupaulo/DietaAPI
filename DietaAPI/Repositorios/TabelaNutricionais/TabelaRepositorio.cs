@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DietaAPI.Repositorios.TabelaNutricionais
 {
-    public class TabelaRepositorio : TabelaInterface
+    public class TabelaRepositorio : ITabelaInterface
     {
 
 

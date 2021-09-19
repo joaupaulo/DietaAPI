@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DietaAPI.Repositorios
 {
-    interface ReceitaInterface
+    public interface IReceitaInterface
     {
         List<Receita> ListarTodos();
         Receita BuscarItem(int id);

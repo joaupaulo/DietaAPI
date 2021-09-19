@@ -1,4 +1,5 @@
 ﻿using DietaAPI.Models;
+using DietaAPI.Repositorios;
 using DietaAPI.Repositorios.Receitas;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,8 +14,8 @@ namespace DietaAPI.Controllers
     [ApiController]
     public class ReceitasController : ControllerBase
     {
-        private readonly ReceitasRepositorio _repositorio;
-        public ReceitasController(ReceitasRepositorio db)
+        private readonly IReceitaInterface _repositorio;
+        public ReceitasController(IReceitaInterface db)
         {
             _repositorio = db;
 

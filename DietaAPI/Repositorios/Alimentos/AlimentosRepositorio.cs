@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DietaAPI.Repositorios
 {
-    public class AlimentosRepositorio : AlimentosInterface
+    public class AlimentosRepositorio : IAlimentosInterface
     {
 
         private readonly DietaContexto  _db;

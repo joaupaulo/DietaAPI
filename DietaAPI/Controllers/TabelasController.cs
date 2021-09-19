@@ -14,8 +14,8 @@ namespace DietaAPI.Controllers
     [ApiController]
     public class TabelasController : ControllerBase
     {
-        private readonly TabelaRepositorio _repositorio;
-        public TabelasController(TabelaRepositorio db)
+        private readonly ITabelaInterface _repositorio;
+        public TabelasController(ITabelaInterface db)
         {
             _repositorio = db;
 

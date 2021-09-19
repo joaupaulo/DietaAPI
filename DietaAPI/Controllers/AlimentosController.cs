@@ -15,8 +15,8 @@ namespace DietaAPI.Controllers
     public class AlimentosController : ControllerBase
     {
 
-        private readonly AlimentosRepositorio _repositorio;
-        public AlimentosController(AlimentosRepositorio db)
+        private readonly IAlimentosInterface _repositorio;
+        public AlimentosController(IAlimentosInterface db)
         {
             _repositorio = db;
 
