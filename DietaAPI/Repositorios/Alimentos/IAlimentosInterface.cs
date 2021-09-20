@@ -8,10 +8,10 @@ namespace DietaAPI.Repositorios
 {
    public  interface IAlimentosInterface
     {
-        List<Alimento> ListarTodos();
-        Alimento BuscarItem(int Id);
-        Alimento Create(Alimento Alimentos);
-        Alimento Update(Alimento Alimentos);
+        Task<IEnumerable<Alimento>> ListarTodos();
+        Task<Alimento> BuscarItem(int Id);
+        Task<Alimento> Create(Alimento Alimentos);
+        Task<Alimento> Update(Alimento Alimentos);
 
         void Delete(int Id);
 

@@ -8,10 +8,10 @@ namespace DietaAPI.Repositorios.TabelaNutricionais
 {
     public interface ITabelaInterface
     {
-        List<TabelaNutricional> ListarTodos();
-        TabelaNutricional Buscaitem(int id);
-        TabelaNutricional Update(TabelaNutricional TabelaNutricionais);
-        TabelaNutricional Create(TabelaNutricional TabelaNutricionais);
+        Task<IEnumerable<TabelaNutricional>> ListarTodos();
+        Task<TabelaNutricional> Buscaitem(int id);
+        Task<TabelaNutricional >Update(TabelaNutricional TabelaNutricionais);
+        Task<TabelaNutricional> Create(TabelaNutricional TabelaNutricionais);
         void Delete(int  id);
 
     }

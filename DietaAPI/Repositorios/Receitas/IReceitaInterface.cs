@@ -8,10 +8,10 @@ namespace DietaAPI.Repositorios
 {
     public interface IReceitaInterface
     {
-        List<Receita> ListarTodos();
-        Receita BuscarItem(int id);
-        Receita Update(Receita Receitas);
-        Receita Create(Receita Receitas);
+       Task<IEnumerable<Receita>> ListarTodos();
+       Task<Receita> BuscarItem(int id);
+       Task<Receita> Update(Receita Receitas);
+       Task<Receita> Create(Receita Receitas);
         void Delete(int id);
 
     }

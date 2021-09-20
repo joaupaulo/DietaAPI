@@ -1,5 +1,6 @@
 ﻿using DietaAPI.Contexto;
 using DietaAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,45 +18,40 @@ namespace DietaAPI.Repositorios
             
         }
 
-        public Alimento BuscarItem(int id)
+     
+      public async Task<IEnumerable<Alimento>> ListarTodos()
         {
-            var Pessoa = _db.Alimento.Find(id);
-
-            return Pessoa;
-           
-            
+            return await _db.Alimento.ToListAsync();
         }
 
-        public Alimento Create(Alimento Alimentos)
+      public async Task<Alimento> BuscarItem(int Id)
         {
+            return await _db.Alimento.LastAsync();
+
+        }
+
+      public async Task<Alimento> Create(Alimento Alimentos)
+        {
+
             _db.Alimento.Add(Alimentos);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
             return Alimentos;
+
+
         }
 
-        public Alimento Update(Alimento Alimentos)
+      public async Task<Alimento> Update(Alimento Alimentos)
         {
             _db.Alimento.Update(Alimentos);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
             return Alimentos;
         }
-
 
         public void Delete(int Id)
         {
-          var delete = _db.Alimento.Where(x => x.AlimentoId == Id).FirstOrDefault();
-
-
-            _db.Alimento.Remove(delete);
+            var delete = _db.Receita.Where(x => x.ReceitaId == Id).FirstOrDefault();
+            _db.Receita.Remove(delete);
             _db.SaveChanges();
-            
-        }
-
-        public List<Alimento> ListarTodos()
-        {
-            var alimento = _db.Alimento.ToList();
-
-            return alimento;
         }
     }
 }
