@@ -1,5 +1,6 @@
 ﻿using DietaAPI.Contexto;
 using DietaAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,36 +17,16 @@ namespace DietaAPI.Repositorios.Receitas
             _db = db;
         }
 
-      public List<Receita> ListarTodos()
+        public async Task<Receita> BuscarItem(int id)
         {
-
-            return _db.Receita.ToList();
+            throw new NotImplementedException();
         }
 
-        public Receita BuscarItem(int id)
+        public async Task<Receita> Create(Receita Receitas)
         {
-           var itemReceita = _db.Receita.Find(id);
-
-            return itemReceita;
-        }
-
-
-        public Receita Create(Receita receitas)
-        {
-            _db.Receita.Add(receitas);
-            _db.SaveChanges();
-
-
-            return receitas;
-        }
-
-        public Receita Update(Receita receitas)
-        {
-            _db.Receita.Update(receitas);
-            _db.SaveChanges();
-
-
-            return receitas;
+            _db.Alimento.Add(Alimentos);
+            await _db.SaveChangesAsync();
+            return Alimentos;
         }
 
         public void Delete(int  id)
@@ -58,5 +39,16 @@ namespace DietaAPI.Repositorios.Receitas
             
         }
 
+        public async Task<IEnumerable<Receita>> ListarTodos()
+        {
+            return await _db.Receita.ToListAsync();
+        }
+
+        public async Task<Receita> Update(Receita Receitas)
+        {
+            _db.Receita.Update(Receitas);
+            await _db.SaveChangesAsync();
+            return Receitas;
+        }
     }
 }
