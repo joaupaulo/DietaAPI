@@ -19,14 +19,14 @@ namespace DietaAPI.Repositorios.Receitas
 
         public async Task<Receita> BuscarItem(int id)
         {
-            throw new NotImplementedException();
+            return await _db.Receita.FirstOrDefaultAsync(x => x.ReceitaId == id);
         }
 
         public async Task<Receita> Create(Receita Receitas)
         {
-            _db.Alimento.Add(Alimentos);
+            _db.Receita.Add(Receitas);
             await _db.SaveChangesAsync();
-            return Alimentos;
+            return Receitas;
         }
 
         public void Delete(int  id)
