@@ -27,10 +27,7 @@ namespace DietaAPI.Repositorios
       public async Task<Alimento> BuscarItem(int Id)
         {
 
-            var Item =  await _db.Alimento.Where(x => x.AlimentoId == Id).FirstOrDefault();
-            return Item;
-     
-
+            return await _db.Alimento.FirstOrDefaultAsync(x => x.AlimentoId == Id);
 
         }
 

@@ -23,26 +23,26 @@ namespace DietaAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult BuscarTodostens()
+        public async Task<ActionResult> BuscarTodostens()
         {
-            return Ok(_repositorio.ListarTodos());
+            return Ok( await _repositorio.ListarTodos());
         }
         [HttpGet("{id}")]
-        public ActionResult BuscarItem(int id)
+        public async Task<ActionResult> BuscarItem(int id)
         {
-            return Ok(_repositorio.Buscaitem(id));
+            return Ok( await _repositorio.Buscaitem(id));
         }
 
         [HttpPost]
-        public ActionResult Create(TabelaNutricional tabelas)
+        public   async Task<ActionResult> Create(TabelaNutricional tabelas)
         {
-            return Ok(_repositorio.Create(tabelas));
+            return Ok( await _repositorio.Create(tabelas));
         }
 
         [HttpPut]
-        public ActionResult Update(TabelaNutricional receitas)
+        public async  Task<ActionResult> Update(TabelaNutricional receitas)
         {
-            return Ok(_repositorio.Update(receitas));
+            return Ok( await _repositorio.Update(receitas));
         }
 
         [HttpDelete]
